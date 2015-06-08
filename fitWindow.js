@@ -1,5 +1,8 @@
 (function() {
 
+    /********************
+    Constructor
+    ********************/
     this.fitWindow = function() {
 
         if (arguments[0] && typeof arguments[0] === "string") {
@@ -15,15 +18,27 @@
         };
 
         this.init = function(){
+            this.events();
             this.resizeSection();
-            var self = this;
-            window.addEventListener( 'resize', function(){
-                self.resizeSection();
-
-            });
         };
 
         this.init();
     };
 
+    /********************
+    Public Methods
+    ********************/
+    fitWindow.prototype.events = function () {
+        initEvents.call(this);
+    }
+
+    /********************
+    Private functions
+    ********************/
+    function initEvents() {
+        var self = this
+        window.addEventListener('resize', function() {
+            self.resizeSection();
+        });
+    }
 })();
