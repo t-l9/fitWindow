@@ -21,8 +21,6 @@
             this.events();
             this.resizeSection();
         };
-
-        this.init();
     };
 
     /********************
